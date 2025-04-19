@@ -5,6 +5,8 @@ description = "Material to share gelslim shear"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "gsw>=3.6.19",
+    "joblib>=1.4.2",
     "matplotlib>=3.10.1",
     "numpy>=2.2.4",
     "opencv-python-headless>=4.11.0.86",
