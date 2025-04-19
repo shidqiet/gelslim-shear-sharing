@@ -1,0 +1,18 @@
+[project]
+name = "gelslim-shear-sharing"
+version = "0.1.0"
+description = "Material to share gelslim shear"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.4",
+    "opencv-python>=4.11.0.86",
+    "pynhhd",
+    "pyqt5>=5.15.11",
+    "scikit-image>=0.25.2",
+    "torch>=2.6.0",
+]
+
+[tool.uv.sources]
+pynhhd = { git = "https://github.com/bhatiaharsh/naturalHHD.git", subdirectory = "pynhhd-v1.1" }
