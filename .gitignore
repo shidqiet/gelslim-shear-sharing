@@ -8,9 +8,6 @@ __pycache__/
 env/
 venv/
 
-# IDEs
-.vscode/
-
 # Distribution
 build/
 dist/
