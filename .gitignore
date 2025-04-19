@@ -1,0 +1,27 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# IDEs
+.vscode/
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Compiled extensions
+*.so
+
+# Plot results
+*.png
+*.mp4
+
+# Data
+!data/people.mp4
