@@ -61,16 +61,17 @@ class ShearGenerator:
             ["irr" in channel for channel in channels]
         ):
             try:
-                from pynhhd import nHHD
+                import pynhhd
             except Exception:
                 print(
                     "pynhhd not installed, install from https://github.com/bhatiaharsh/naturalHHD"
                 )
-            self.nhhd = nHHD(grid=output_size, spacings=(1, 1))
+            self.nhhd = pynhhd.nHHD(grid=output_size, spacings=(1, 1))
         if method not in ["weighted", "1", "2"]:
             raise ValueError("method must be weighted, 1, 2")
         self.method = method
 
+        self.displacement = 0.0
         self.displacement_threshold = displacement_threshold
         self.displacement_midpoint = displacement_midpoint
         self.reset_threshold = reset_threshold
@@ -247,7 +248,7 @@ class ShearGenerator:
                     displacement2 = np.max(np.array([np.std(self.u2), np.std(self.v2)]))
                     if displacement2 < self.reset_threshold:
                         if (
-                            self.time() - self.last_reset_time > self.auto_reset_period
+                            self.time - self.last_reset_time > self.auto_reset_period
                             and self.prev_displacement2 >= self.reset_threshold
                         ):
                             self.reset_shear()

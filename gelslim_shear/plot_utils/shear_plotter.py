@@ -102,6 +102,10 @@ class ShearPlotter:
             num_fingers,
             figsize=figsize,
         )
+        if num_fingers == 1:
+            self.ax = self.ax.reshape(
+                self.ax.shape[0], 1
+            )  # Ensure it's 2D with shape (N, 1)
         if titles is None:
             self.titles = self.non_scalar_fields + self.scalar_fields
         else:
